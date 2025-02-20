@@ -2,11 +2,11 @@ import json
 import os
 
 
-annotations_file = r"C:\Users\Asus\PycharmProjects\YapayZeka\coco_data\annotations\captions_train2017.json"
+annotations_file = r"C:\Users\Asus\PycharmProjects\TextToImage\coco_data\annotations\captions_train2017.json"
 
 
 if not os.path.exists(annotations_file):
-    raise FileNotFoundError(f"Belirtilen JSON dosyası bulunamadı: {annotations_file}")
+    raise FileNotFoundError(f"The specified JSON file was not found: {annotations_file}")
 
 with open(annotations_file, 'r') as f:
     coco_data = json.load(f)
@@ -20,7 +20,7 @@ def add_new_image_and_annotation(coco_data, file_name, caption, height, width):
 
     new_image_id = max(existing_image_ids) + 1 if existing_image_ids else 1
     if new_image_id in existing_image_ids:
-        print(f"Bu resim ID'si zaten kullanılıyor: {new_image_id}")
+        print(f"This image ID is already in use: {new_image_id}")
         return
 
 
@@ -36,7 +36,7 @@ def add_new_image_and_annotation(coco_data, file_name, caption, height, width):
 
     new_annotation_id = max(existing_annotation_ids) + 1 if existing_annotation_ids else 1
     if new_annotation_id in existing_annotation_ids:
-        print(f"Bu açıklama ID'si zaten kullanılıyor: {new_annotation_id}")
+        print(f"This description ID is already in use: {new_annotation_id}")
         return
 
 
@@ -48,7 +48,7 @@ def add_new_image_and_annotation(coco_data, file_name, caption, height, width):
     coco_data['annotations'].append(new_annotation)
     existing_annotation_ids.add(new_annotation_id)
 
-    print(f"Yeni resim ve açıklama başarıyla eklendi!\nResim ID: {new_image_id}\nAçıklama ID: {new_annotation_id}")
+    print(f"New image and description successfully added!\nResim ID: {new_image_id}\nDescription ID: {new_annotation_id}")
 
 
 new_data = [
@@ -286,4 +286,4 @@ for data in new_data:
 with open(annotations_file, 'w') as f:
     json.dump(coco_data, f)
 
-print("JSON dosyası başarıyla güncellendi.")
+print("JSON file updated successfully.")
