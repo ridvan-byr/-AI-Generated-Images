@@ -3,7 +3,8 @@ Python was used for this project. It includes a project in which we can generate
 
 
 Requirements to use the project effectively
-Download the -COCO dataset. Link:https://cocodataset.org/#download
+
+-Download the COCO dataset. Link:https://cocodataset.org/#download
 -Download 2017 Train images [118K/18GB] and 2017 Train/Val annotations [241MB] from here.
 -In Python code, replace output_path = r “C:\Users\Asus\Desktop\ResimlerinCiktisi\sonuc_resmi.png” with the path to the file you want to output the image to.
 In -DataAdd.py 
