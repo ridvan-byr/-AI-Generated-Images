@@ -1,5 +1,7 @@
 # -AI-Generated-Images
 Python was used for this project. It includes a project in which we can generate images from text with machine learning.
+
+
 Requirements to use the project effectively
 Download the -COCO dataset. Link:https://cocodataset.org/#download
 -Download 2017 Train images [118K/18GB] and 2017 Train/Val annotations [241MB] from here.
